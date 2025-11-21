@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Regalo</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ffb6c1, #ff88a7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      #container {
+        text-align: center;
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        width: 300px;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        background: #ff88a7;
+        color: white;
+      }
+      .fadeout {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+      }
+      .fadein {
+        opacity: 0;
+        animation: fadeinAnim 0.8s forwards;
+      }
+
+      @keyframes fadeinAnim {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <button id="btn1">Continuar</button>
+    </div>
+
+    <script>
+      const container = document.getElementById("container");
+      const text = document.getElementById("text");
+      const btn1 = document.getElementById("btn1");
+
+      btn1.addEventListener("click", () => {
+        container.classList.add("fadeout");
+        setTimeout(() => {
+          text.remove();
+          btn1.remove();
+          container.classList.remove("fadeout");
+
+          const calendario = document.createElement("input");
+          calendario.type = "date";
+          calendario.id = "fecha";
+          calendario.style.marginTop = "10px";
+          calendario.classList.add("fadein");
+          container.appendChild(calendario);
+
+          const btn2 = document.createElement("button");
+          btn2.textContent = "Listo";
+          btn2.classList.add("fadein");
+          container.appendChild(btn2);
+
+          btn2.addEventListener("click", () => {
+            container.classList.add("fadeout");
+            setTimeout(() => {
+              calendario.remove();
+              btn2.remove();
+              container.classList.remove("fadeout");
+
+              const finalText = document.createElement("p");
+              finalText.textContent = "Aquí va tu texto especial";
+              finalText.classList.add("fadein");
+              container.appendChild(finalText);
+
+              const img = document.createElement("img");
+              img.src = "https://via.placeholder.com/200";
+              img.style.marginTop = "15px";
+              img.style.borderRadius = "10px";
+              img.classList.add("fadein");
+              container.appendChild(img);
+            }, 600);
+          });
+        }, 600);
+      });
+      "click",
+        () => {
+          text.remove();
+          btn1.remove();
+
+          const calendario = document.createElement("input");
+          calendario.type = "date";
+          calendario.id = "fecha";
+          calendario.style.marginTop = "10px";
+          container.appendChild(calendario);
+
+          const btn2 = document.createElement("button");
+          btn2.textContent = "Listo";
+          container.appendChild(btn2);
+
+          btn2.addEventListener("click", () => {
+            calendario.remove();
+            btn2.remove();
+
+            const finalText = document.createElement("p");
+            finalText.textContent = "Aquí va tu texto especial";
+            container.appendChild(finalText);
+
+            const img = document.createElement("img");
+            img.src = "C:\Users\laura\Desktop\happynewyear\el_rey_leon_4.jpg";
+            img.style.marginTop = "15px";
+            img.style.borderRadius = "10px";
+            container.appendChild(img);
+          });
+        };
+    </script>
+  </body>
+</html>
