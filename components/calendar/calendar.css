@@ -1,75 +1,119 @@
+/* ====== ESTILO ROMÁNTICO (compatible con tu diseño actual) ====== */
+
+body {
+    background: linear-gradient(135deg, #ffe5ec, #ffd7f1);
+    font-family: "Poppins", sans-serif;
+    color: #4a2c3a;
+}
+
+/* CALENDARIO */
 .calendar-wrapper {
     display: flex;
-    gap: 20px;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .calendar {
-    width: 590px;
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    width: 600px;
+    background: #fff0f7;
+    border-radius: 18px;
+    padding: 20px;
+    border: 2px solid #ffcce1;
+    box-shadow: 0px 10px 25px rgba(255, 150, 200, 0.25);
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    color: #d42d74;
+    margin-bottom: 12px;
+}
+
+.calendar-header button {
+    background: #ffb6d5;
+    color: white;
+    border: none;
+    font-size: 1.3rem;
     font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.calendar-header button:hover {
+    background: #ff8bb0;
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    margin-top: 10px;
-    gap: 5px;
+    gap: 8px;
 }
 
 .calendar-day {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
-    border-radius: 6px;
-    cursor: pointer;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #ffd3e6;
+    color: #653c50;
+    transition: 0.2s;
 }
 
-.calendar-day.disabled {
-    color: #ccc;
-    cursor: default;
-}
-
-.calendar-day.today {
-    background: #d8e6ff;
-    font-weight: bold;
+.calendar-day:hover {
+    background: #ffe3f0;
 }
 
 .calendar-day.active {
-    background: #6a80ff;
+    background: #ff8bb0;
     color: white;
+    border-color: #ff4f91;
 }
 
+.calendar-day.today {
+    background: #ffd9ec;
+    border-color: #ffb3d9;
+    font-weight: bold;
+}
+
+.calendar-day.disabled {
+    color: #c9a6b6;
+    background: #fbeaf1;
+}
+
+/* LISTA DE HORAS */
 .hours-list {
-    width: 100px;
-    height: 300px;
+    width: 120px;
+    height: 350px;
     overflow-y: scroll;
-    background: white;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    background: #fff7fb;
+    border-radius: 15px;
+    border: 2px solid #ffcce1;
+    padding: 12px;
+    box-shadow: 0px 8px 16px rgba(255, 140, 180, 0.2);
 }
 
 .hour {
-    padding: 8px;
+    padding: 10px;
     text-align: center;
-    border-radius: 6px;
-    margin-bottom: 6px;
+    border-radius: 10px;
+    background: white;
+    margin-bottom: 10px;
     cursor: pointer;
+    border: 1px solid #ffcce1;
+    transition: 0.2s;
 }
 
 .hour:hover {
-    background: #e8e8e8;
+    background: #ffe1ef;
 }
 
 .hour.active {
-    background: #6a80ff;
+    background: #ff6fa6;
     color: white;
+    border-color: #ff3e84;
 }

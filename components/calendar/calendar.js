@@ -118,6 +118,9 @@ function selectDay(el, dateObj) {
   el.classList.add("active");
 
   selectedDate = dateObj.toISOString().split("T")[0];
+
+  // Hacerlo global
+  window.fechaSeleccionada = selectedDate;
 }
 
 function selectHour(el) {
@@ -127,4 +130,7 @@ function selectHour(el) {
   el.classList.add("active");
 
   selectedHour = el.textContent;
+
+  // Hacerlo global
+  window.horaSeleccionada = selectedHour;
 }

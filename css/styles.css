@@ -1,6 +1,3 @@
-body {
-    background: #c0f9b1;
-}
 /* El calendario ocupará todo el ancho de la pantalla */
 #calendar-wrapper {
     width: 100vw;
@@ -14,4 +11,182 @@ body {
     background: white;
     padding: 20px;
     border-radius: 12px;
+}
+/* ----------- ESTILO GENERAL ----------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffe5ec, #ffd7f1);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  color: #4a2c3a;
+}
+
+/* Contenedor principal */
+.container {
+  background: #ffffffcc;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(255, 150, 200, 0.25);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease-in-out;
+}
+
+.container.hidden {
+  display: none;
+}
+
+/* ----------- TITULOS ROMÁNTICOS ----------- */
+h1, h2, h3 {
+  text-align: center;
+  color: #d42d74;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ----------- BOTONES ----------- */
+button {
+  background: #ff8bb0;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+  display: block;
+  margin: 20px auto 0 auto;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #ff6f9e;
+  box-shadow: 0 4px 12px rgba(255, 120, 160, 0.4);
+}
+
+/* ----------- FORMULARIO ----------- */
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #ffb6d5;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background: #fff7fb;
+}
+
+input:focus, select:focus {
+  border-color: #ff6f9e;
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 110, 160, 0.4);
+}
+
+/* ----------- CALENDARIO ----------- */
+.calendar-container {
+  padding: 20px;
+  background: #fff0f6;
+  border-radius: 16px;
+  border: 2px solid #ffcce1;
+  box-shadow: 0px 6px 15px rgba(255, 150, 200, 0.2);
+  width: 100%;
+  margin: auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-header button {
+  background: none;
+  color: #d42d74;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+.calendar-header button:hover {
+  background: #ffe3ee;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+/* Días */
+.calendar-day, .calendar-weekday {
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.calendar-weekday {
+  font-weight: 600;
+  color: #b23c6f;
+}
+
+.calendar-day {
+  background: #fff;
+  border: 1px solid #ffd3e6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.calendar-day:hover {
+  background: #ffe6f1;
+}
+
+.calendar-day.active {
+  background: #ff8bb0;
+  color: white;
+  border-color: #ff4f91;
+}
+
+/* ----------- HORAS ----------- */
+.hour {
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ffc6df;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hour:hover {
+  background: #ffe1ef;
+}
+
+.hour.active {
+  background: #ff6fa6;
+  color: white;
+  border-color: #ff3e84;
+}
+
+/* ----------- RESUMEN ----------- */
+.summary-box {
+  background: #fff0f7;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #ffcbe4;
+  box-shadow: 0px 8px 20px rgba(255, 120, 150, 0.15);
+}
+
+.summary-box p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #5a3446;
 }
