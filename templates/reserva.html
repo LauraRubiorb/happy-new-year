@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva Confirmada</title>
+
+    <style>
+      body {
+        font-family: "Georgia", serif;
+        background: #f8f3e9;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+      }
+
+      .ticket {
+        background: white;
+        width: 500px;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border: 2px dashed #d4a74a;
+        text-align: center;
+        position: relative;
+      }
+
+      .ticket::before,
+      .ticket::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #f8f3e9;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .ticket::before {
+        left: -20px;
+      }
+
+      .ticket::after {
+        right: -20px;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        font-size: 26px;
+        color: #b8872b;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 8px 0;
+      }
+
+      .imagen-reserva {
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 12px;
+      }
+
+      .btn-volver {
+        margin-top: 25px;
+        padding: 10px 20px;
+        border: none;
+        background: #b8872b;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .btn-volver:hover {
+        background: #a27622;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ticket">
+      <h1>🎭 Reserva Confirmada</h1>
+
+      <p><strong>Email 1:</strong> <span id="email1"></span></p>
+      <p><strong>Email 2:</strong> <span id="email2"></span></p>
+
+      <p><strong>Día:</strong> <span id="fecha"></span></p>
+      <p><strong>Hora:</strong> <span id="hora"></span></p>
+
+      <hr
+        style="margin: 20px 0; border: none; border-top: 1px dashed #d4a74a"
+      />
+
+      <p style="font-size: 18px">
+        Reserva tu día
+        <strong id="fecha2"></strong>
+        a las
+        <strong id="hora2"></strong><br />
+        para disfrutar del musical<br />
+        <strong>✨ El Rey León ✨</strong>.
+      </p>
+
+      <img
+        src="../resources/image0.jpg"
+        class="imagen-reserva"
+        alt="Imagen de reserva"
+      />
+
+      <button onclick="volver()" class="btn-volver">
+        Volver a la página principal
+      </button>
+    </div>
+
+    <script>
+      // Cargar datos almacenados en localStorage
+      document.getElementById("email1").textContent =
+        localStorage.getItem("email1");
+      document.getElementById("email2").textContent =
+        localStorage.getItem("email2");
+      document.getElementById("fecha").textContent =
+        localStorage.getItem("fecha");
+      document.getElementById("hora").textContent =
+        localStorage.getItem("hora");
+
+      document.getElementById("fecha2").textContent =
+        localStorage.getItem("fecha");
+      document.getElementById("hora2").textContent =
+        localStorage.getItem("hora");
+
+      function volver() {
+        window.location.href = "../index.html";
+      }
+    </script>
+  </body>
+</html>

@@ -11,34 +11,49 @@
     />
 
     <!-- CSS GENERAL -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- CSS DEL CALENDARIO -->
+    <!-- CSS DEL CALENDARIO ORIGINAL -->
     <link rel="stylesheet" href="components/calendar/calendar.css" />
   </head>
 
   <body>
     <div class="container mt-5">
-      <!-- TÍTULO -->
       <h2 class="text-center mb-4">Selecciona los datos del evento</h2>
 
       <!-- FORMULARIO -->
-      <form id="formulario" class="row g-3 justify-content-center">
+      <form id="contact-form" class="row g-3 justify-content-center">
         <div class="col-md-6">
-          <label for="email1" class="form-label"
-            >Correo electrónico persona 1</label
-          >
-          <input type="email" class="form-control" id="email1" required />
+          <label for="email1" class="form-label">
+            Correo electrónico persona 1
+          </label>
+          <input
+            type="email"
+            class="form-control"
+            id="email1"
+            name="email1"
+            required
+          />
         </div>
 
         <div class="col-md-6">
-          <label for="email2" class="form-label"
-            >Correo electrónico persona 2</label
-          >
-          <input type="email" class="form-control" id="email2" required />
+          <label for="email2" class="form-label">
+            Correo electrónico persona 2
+          </label>
+          <input
+            type="email"
+            class="form-control"
+            id="email2"
+            name="email2"
+            required
+          />
         </div>
 
-        <!-- CALENDARIO -->
+        <!-- HIDDEN PARA EMAILJS -->
+        <input type="hidden" name="fecha" id="fecha" />
+        <input type="hidden" name="hora" id="hora" />
+
+        <!-- CALENDARIO ORIGINAL -->
         <div class="col-12 px-0">
           <div
             id="calendar-wrapper"
@@ -67,14 +82,27 @@
         <button class="btn btn-secondary mt-3 me-2" onclick="volverAtras()">
           Volver atrás
         </button>
-        <button class="btn btn-success mt-3" onclick="enviarCorreo()">
-          Enviar
+
+        <!-- BOTÓN DE ENVIAR (fuera del formulario, correcto) -->
+        <button
+          type="submit"
+          id="btnEnviar"
+          class="btn btn-success mt-3 d-none"
+          form="contact-form"
+        >
+          Enviar correo
         </button>
       </div>
     </div>
 
-    <!-- JS DEL CALENDARIO -->
+    <!-- TU CALENDARIO ORIGINAL -->
     <script src="components/calendar/calendar.js"></script>
+
+    <!-- EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      emailjs.init("LtY221y4d6WEVCcZ1");
+    </script>
 
     <!-- JS GENERAL -->
     <script src="js/main.js"></script>

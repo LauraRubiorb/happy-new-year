@@ -119,8 +119,11 @@ function selectDay(el, dateObj) {
 
   selectedDate = dateObj.toISOString().split("T")[0];
 
-  // Hacerlo global
+  // Guardado global
   window.fechaSeleccionada = selectedDate;
+
+  // Notificar a main.js
+  setFechaHora(window.fechaSeleccionada, window.horaSeleccionada);
 }
 
 function selectHour(el) {
@@ -131,6 +134,9 @@ function selectHour(el) {
 
   selectedHour = el.textContent;
 
-  // Hacerlo global
+  // Guardado global
   window.horaSeleccionada = selectedHour;
+
+  // Notificar a main.js
+  setFechaHora(window.fechaSeleccionada, window.horaSeleccionada);
 }

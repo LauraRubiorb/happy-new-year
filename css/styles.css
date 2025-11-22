@@ -1,17 +1,5 @@
 /* El calendario ocupará todo el ancho de la pantalla */
-#calendar-wrapper {
-    width: 100vw;
-    margin-left: calc(50% - 50vw); /* truco para romper el container */
-}
 
-/* El calendario podrá crecer al ancho completo */
-.calendar-full {
-    width: 90vw;         /* ocupa el 90% de la pantalla */
-    max-width: 1400px;   /* límite opcional para pantallas grandes */
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-}
 /* ----------- ESTILO GENERAL ----------- */
 body {
   margin: 0;
