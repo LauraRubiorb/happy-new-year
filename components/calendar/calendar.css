@@ -117,3 +117,89 @@ body {
     color: white;
     border-color: #ff3e84;
 }
+/* ============================================================
+   📱 RESPONSIVE PARA EL CALENDARIO (móviles)
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  /* El wrapper pasa a columna */
+  .calendar-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  /* El calendario ocupa todo el ancho */
+  .calendar {
+    width: 100% !important;
+    padding: 15px;
+  }
+
+  /* El header del calendario reduce tamaño */
+  .calendar-header {
+    font-size: 1rem;
+  }
+
+  .calendar-header button {
+    font-size: 1.1rem;
+    padding: 5px 10px;
+  }
+
+  /* La cuadrícula se adapta y el tamaño baja un poco */
+  .calendar-grid {
+    gap: 5px;
+  }
+
+  .calendar-day {
+    padding: 9px;
+    font-size: 0.85rem;
+  }
+
+  /* 📌 HORAS: pasan debajo y ahora ocupan todo el ancho */
+  .hours-list {
+    width: 100% !important;
+    height: 200px;
+    padding: 10px;
+    margin-top: 10px;
+    overflow-y: auto;
+  }
+
+  .hour {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  /* Mejora del scroll visible */
+  .hours-list::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .hours-list::-webkit-scrollbar-thumb {
+    background: #ff9cc1;
+    border-radius: 10px;
+  }
+
+  .hours-list::-webkit-scrollbar-track {
+    background: #ffe6f0;
+  }
+}
+
+/* ============================================================
+   📱 TABLETS pequeñas (ancho 600–800px)
+   ============================================================ */
+@media (min-width: 601px) and (max-width: 800px) {
+
+  .calendar-wrapper {
+    gap: 20px;
+  }
+
+  .calendar {
+    width: 90%;
+  }
+
+  .hours-list {
+    width: 150px;
+  }
+}
+
